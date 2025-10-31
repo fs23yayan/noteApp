@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Notes App - Organize your thoughts with pure vanilla JavaScript">
+    <title>Notes App - Vanilla JS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Web Components will be inserted here -->
+        <app-header></app-header>
+        
+        <main class="main-content">
+            <div class="container">
+                <note-form></note-form>
+                
+                <section class="notes-section" id="active-notes-section" style="display: none;">
+                    <h2 class="section-title">
+                        <svg class="section-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                        Active Notes
+                        <span class="count-badge" id="active-count">0</span>
+                    </h2>
+                    <div class="notes-grid" id="active-notes-grid"></div>
+                </section>
+
+                <section class="notes-section" id="archived-notes-section" style="display: none;">
+                    <h2 class="section-title">
+                        <svg class="section-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path>
+                        </svg>
+                        Archived Notes
+                        <span class="count-badge archived" id="archived-count">0</span>
+                    </h2>
+                    <div class="notes-grid" id="archived-notes-grid"></div>
+                </section>
+
+                <div class="empty-state" id="empty-state">
+                    <svg class="empty-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                    <h3>No notes found</h3>
+                    <p id="empty-message">Create your first note to get started</p>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; 2025 Notes App. Built with Vanilla JavaScript & Web Components</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Load Web Components and App Logic -->
+    <script src="components/AppHeader.js"></script>
+    <script src="components/NoteCard.js"></script>
+    <script src="components/NoteForm.js"></script>
+    <script src="data/notesData.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
